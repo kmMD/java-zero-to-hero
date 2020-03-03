@@ -16,6 +16,6 @@ public class ListOfList {
     //Only streams are allowed
     //Read about Stream::flatmap()
     public static List<Integer> findFirst20NumbersDividableBy7() {
-        return null;
+        return numbers.stream().flatMap(array -> array.stream().filter(integer -> integer % 7 == 0)).limit(20).collect(Collectors.toList());
     }
 }

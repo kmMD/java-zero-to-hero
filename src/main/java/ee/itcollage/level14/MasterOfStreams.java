@@ -3,6 +3,8 @@ package ee.itcollage.level14;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import static java.util.stream.Collectors.groupingBy;
 
 public class MasterOfStreams {
 
@@ -19,13 +21,13 @@ public class MasterOfStreams {
         return result;
     }
 
-    //TODO convert method convertMe using streams
+    // convert method convertMe using streams
     public static List<Integer> converted() {
-        return null;
+        return nums.stream().filter(integer -> integer % 2 == 1).map(integer -> integer * 2).collect(Collectors.toList());
     }
 
-    //TODO create map using stream, where words would be grouped up by their length
+    // create map using stream, where words would be grouped up by their length
     public static Map<Integer, List<String>> mapWordsByLength(List<String> words)  {
-        return null;
+       return words.stream().collect(groupingBy(String::length));
     }
 }

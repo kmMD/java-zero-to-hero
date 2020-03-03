@@ -2,7 +2,7 @@ package ee.itcollage.level9;
 
 public class StringMaker {
 
-    //todo fix tests
+    // fix tests
     /**
      * Gives you a text containing of x times of string c.
      * @param s the string to repeat
@@ -10,6 +10,9 @@ public class StringMaker {
      */
     public static String make(String s, int x) {
         String chars = "";
+        for (int i = 0; i < x; i++) {
+            chars += s;
+        }
         return chars;
     }
 
@@ -18,6 +21,12 @@ public class StringMaker {
      */
     public static String make(String s1, int x1, String s2, int x2) {
         String chars = "";
+        for (int i = 0; i < x1; i++) {
+            chars += s1;
+        }
+        for (int i = 0; i < x2; i++) {
+            chars += s2;
+        }
         return chars;
     }
 }

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class DuplicateRemover {
 
-    //todo fix tests
+    // fix tests
     public static List<Integer> removeDuplicates(List<Integer> numbers){
         List<Integer> result = new ArrayList<Integer>();
         for(Integer integer : numbers) {

@@ -6,9 +6,13 @@ import java.util.Map;
 
 public class PersonGrouper {
 
-    //todo fix tests
+    // fix tests
     public static Map<String, Person> groupPeopleByIdCode(List<Person> people){
-        return new HashMap<>();
-    }
+       Map<String, Person> result = new HashMap<String, Person>();
+       for (Person person : people) {
+           result.put(person.getIdCode(), person);
+       }
 
+       return result;
+    }
 }

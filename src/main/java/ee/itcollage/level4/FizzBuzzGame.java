@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 public class FizzBuzzGame {
 
-    //todo fizzbuzz is a drinking game
+    // fizzbuzz is a drinking game
     // hope your version will be as fun
     // rules are as follows:
     // numbers 1-100
@@ -19,7 +19,15 @@ public class FizzBuzzGame {
 
         System.out.println("Example 1");
         for (Integer number : numbers) {
-            //do your logic
+            if (number % 3 == 0 && number % 5 == 0) {
+                System.out.println("fizzbuzz");
+            }
+            else if (number % 3 == 0) {
+                System.out.println("fizz");
+            }
+            else if (number % 5 == 0) {
+                System.out.println("buzz");
+            }
             System.out.print(number);
             System.out.print(" ");
         }

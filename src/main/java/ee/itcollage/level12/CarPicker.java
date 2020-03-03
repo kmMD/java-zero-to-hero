@@ -1,5 +1,6 @@
 package ee.itcollage.level12;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -17,26 +18,56 @@ public class CarPicker {
                 buildCar("Bicycle", 100, false, 0.5)
         );
         System.out.println("Garage contains: \n" + garage);
-        //todo 3.1 what does garage print? Can you make it print something prettier?
+        // 3.1 what does garage print? Can you make it print something prettier?
 
-        //todo 3.2 Ask user how much money do they have and pick them a car or cars based on cars you have in garage
+        // 3.2 Ask user how much money do they have and pick them a car or cars based on cars you have in garage
         // uncomment following lines for reading input example
         Scanner scanner = new Scanner(System.in);
-        //System.out.println("How much money do you have?");
-        //String input = scanner.nextLine();
-        //System.out.println("Your input: " + input);
+        System.out.println("How much money do you have?");
+        String input = scanner.nextLine();
 
-
-        Car car = garage.get(0);
+        List<Car> offer = new ArrayList<Car>();
+        for (Car car : garage) {
+            if (car.getCost() <= Integer.parseInt(input)) {
+                offer.add(car);
+            }
+        }
 
         System.out.println("\n");
-        System.out.println("Shop recommends you: " + car);
+        System.out.println("Shop recommends you: " + offer);
 
-        //todo ADVANCED
+        // ADVANCED
         // ask user 2nd question (+rating)
 
-        //todo ADVANCED
+        System.out.println("Minimum rating?");
+        String rating = scanner.nextLine();
+        List<Car> offer2 = new ArrayList<Car>();
+        for (Car car : offer) {
+            if (car.getUserRating() >= Double.parseDouble(rating)) {
+                offer2.add(car);
+            }
+        }
+
+        System.out.println("\n");
+        System.out.println("Shop recommends you: " + offer2);
+
+        // ADVANCED
         // ask user 3rd question (+electric)
+
+        System.out.println("Electric?");
+        String electric = scanner.nextLine();
+        List<Car> offer3 = new ArrayList<Car>();
+        for (Car car : offer2) {
+            if (electric.equals("yes") && car.isElectric()) {
+                offer3.add(car);
+            }
+            else if (electric.equals("no") && !car.isElectric()) {
+                offer3.add(car);
+            }
+        }
+
+        System.out.println("\n");
+        System.out.println("Shop recommends you: " + offer3);
     }
 
     private static Car buildCar(String name, int cost, boolean electric, double userRating) {

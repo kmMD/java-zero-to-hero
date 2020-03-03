@@ -38,4 +38,8 @@ public class Car {
     public void setCost(Integer cost) {
         this.cost = cost;
     }
+
+    public String toString() {
+        return model;
+    }
 }

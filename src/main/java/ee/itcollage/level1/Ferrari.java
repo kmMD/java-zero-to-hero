@@ -11,8 +11,14 @@ public class Ferrari {
     }
 
     public void drift(){
-        //todo add method body
+        System.out.println("WEEEEEEEEEEEEEEEEEEEE");
     }
 
-    //todo create more methods
+    public void crash() {
+        System.out.println("FUUUUUUCCCKKKKK");
+    }
+
+    public String toString() {
+        return "This is my red ferrari";
+    }
 }

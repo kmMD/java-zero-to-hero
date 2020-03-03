@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 
 public class DuplicateRemoverTest {
 
-    //todo 2 fix tests
+    // 2 fix tests
 
     @Test
     public void nothing_happens_to_list_of_unique_elements() {

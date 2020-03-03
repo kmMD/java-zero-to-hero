@@ -6,7 +6,7 @@ import java.util.List;
 
 public class SumOfNumbers {
 
-    //todo make tests work
+    // make tests work
     public static Integer sum(List<Integer> integerList) {
         if (CollectionUtils.isNotEmpty(integerList)) {
             // add gradle dependency for apache collectionutils and rewrite this condition with isNotEmpty

@@ -4,17 +4,26 @@ import java.util.List;
 
 public class PalindromeWords {
 
-    //todo write a program to analyze palindrome words
+    // write a program to analyze palindrome words
     // main method shows how to reverse a string
-    // todo write tests for your code
+    // write tests for your code
 
     /**
      * palindrome is a word that is equal to itself reversed.
      * For example: radar (reversed radar) is a palindrome
      * cow (reversed woc) is not a palindrome
      */
-    public AnalysisResult analyzePalindromes(List<String> strings){
-        return new AnalysisResult();
+    public static AnalysisResult analyzePalindromes(List<String> strings){
+        AnalysisResult result = new AnalysisResult();
+        for(String string : strings) {
+            if (string.equals(new StringBuilder(string).reverse().toString())) {
+                result.addPalindrome(string);
+            }
+            else {
+                result.addOther(string);
+            }
+        }
+        return result;
     }
 
     public static void main(String[] args) {

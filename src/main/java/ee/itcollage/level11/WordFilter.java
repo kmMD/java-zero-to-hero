@@ -5,33 +5,71 @@ import java.util.List;
 
 public class WordFilter {
 
-    //todo fix tests
+    // fix tests
 
     public List<Word> getNouns(List<Word> words) {
-        return words;
+        List<Word> result = new ArrayList<Word>();
+        for (Word word : words) {
+            if (word.getWordType() == Word.WordType.NOUN) {
+                result.add(word);
+            }
+        }
+        return result;
     }
 
     public Word getFirstVerb(List<Word> words) {
-        return words.get(0);
+        for (Word word : words) {
+            if (word.getWordType() == Word.WordType.VERB) {
+                return word;
+            }
+        }
+        return null;
     }
 
     public Word getFirstOfType(List<Word> words, Word.WordType type) {
-        return words.get(0);
+        for (Word word : words) {
+            if (word.getWordType() == type) {
+                return word;
+            }
+        }
+        return null;
     }
 
     public List<Word> getAllNotNouns(List<Word> words) {
-        return words;
+        List<Word> result = new ArrayList<Word>();
+        for (Word word : words) {
+            if (word.getWordType() != Word.WordType.NOUN) {
+                result.add(word);
+            }
+        }
+        return result;
     }
 
     public List<String> getNounStrings(List<Word> words){
-        return new ArrayList<>();
+        List<String> result = new ArrayList<String>();
+        for (Word word : words) {
+            if (word.getWordType() == Word.WordType.NOUN) {
+                result.add(word.getWord());
+            }
+        }
+        return result;
     }
 
     public String getFirstVerbString(List<Word> words) {
-        return "";
+        for (Word word : words) {
+            if (word.getWordType() == Word.WordType.VERB) {
+                return word.getWord();
+            }
+        }
+        return null;
     }
 
     public String getFirstStringOfType(List<Word> words, Word.WordType type) {
-        return "";
+        for (Word word : words) {
+            if (word.getWordType() == type) {
+                return word.getWord();
+            }
+        }
+        return null;
     }
 }

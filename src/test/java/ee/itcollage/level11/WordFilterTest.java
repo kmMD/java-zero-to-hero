@@ -11,10 +11,10 @@ import static org.junit.Assert.assertFalse;
 
 public class WordFilterTest {
 
-    //todo 1 make tests pass
+    // 1 make tests pass
 
     private String sentence = "The quick brown fox jumps over the lazy dog and laughs";
-    //todo you can read more about our sentence here: https://en.wikipedia.org/wiki/The_quick_brown_fox_jumps_over_the_lazy_dog
+    // you can read more about our sentence here: https://en.wikipedia.org/wiki/The_quick_brown_fox_jumps_over_the_lazy_dog
     private List<Word> words = Arrays.asList(
             new Word("the", Word.WordType.OTHER),
             new Word("quick", Word.WordType.ADJECTIVE),
